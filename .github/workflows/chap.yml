@@ -16,12 +16,12 @@ jobs:
       - name: Install dependencies for project and Chap
         run: | 
           sudo apt update
-          sudo apt install libpq-dev cmake -y 
+          sudo apt install postgresql-server-dev-16 cmake -y 
           
       - name: Build repository 
         run: | 
-          mkdir build && cd build 
-          cmake .. && make
+          ./bootstrap
+          cd build && make
 
       - name: Clone chap repository and build
         run: |
