@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies for project and Chap
         run: | 
           sudo apt-get update
-          sudo apt-get install -y cmake postgresql postgresql-contrib postgresql-common
+          sudo apt-get install -y cmake postgresql-server-dev-all
           
       - name: Build repository 
         run: | 
