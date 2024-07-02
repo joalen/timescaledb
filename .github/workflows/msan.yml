@@ -21,7 +21,7 @@ jobs:
         if: runner.os == 'Linux'
         run: | 
           sudo apt-get update
-          sudo apt-get install -y postgresql-server-dev-16 libpq-dev
+          sudo apt-get install -y postgresql-server-dev-16 libpq-dev llvm
           
       - name: Build repository 
         run: | 
