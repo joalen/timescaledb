@@ -21,7 +21,7 @@ jobs:
         if: runner.os == 'Linux'
         run: | 
           sudo apt-get update
-          sudo apt-get install -y postgresql-common postgresql-14 postgresql postgresql-contrib libpq-dev llvm
+          sudo apt-get install -y postgresql-common postgresql-14 postgresql postgresql-contrib postgresql-server-dev-16 libpq-dev llvm
           
       - name: Build repository 
         run: | 
