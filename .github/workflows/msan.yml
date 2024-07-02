@@ -9,7 +9,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-24.04]
+        os: [ubuntu-22.04]
 
     steps:
       - name: Check out repository
@@ -21,7 +21,7 @@ jobs:
         if: runner.os == 'Linux'
         run: | 
           sudo apt-get update
-          sudo apt-get install -y postgresql-server-dev-16 libpq-dev llvm
+          sudo apt-get install -y postgresql-* libpq-dev llvm
           
       - name: Build repository 
         run: | 
