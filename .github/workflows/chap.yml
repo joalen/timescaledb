@@ -17,12 +17,16 @@ jobs:
         with:
           ref: c978c69a94223b8218f6f9cc8988e68cf89a804f
 
-      - name: Install dependencies for project and Chap
+      - name: Install dependencies for project (Linux)
+        if: runner.os == 'Linux'
         run: | 
-          wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-          sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+          sudo apt-get update
+          sudo apt-get install -y postgresql-common postgresql-14 postgresql postgresql-contrib postgresql-server-dev-14 libpq-dev
+
+      - name: Install dependencies for Chap
+        run: |
           sudo apt update
-          sudo apt install postgresql-server-dev-16 cmake -y 
+          sudo apt-get install -y cmake
           
       - name: Build repository 
         run: | 
