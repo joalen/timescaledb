@@ -269,5 +269,3 @@ jobs:
         with:
           name: dynamoRIO-aggregated-reports-${{ github.event.repository.name }}-on-${{ matrix.os }}-under-${{ matrix.arch }}
           path: './dynamoriologs/*'
-
-          path: './logs_coverage/*'
